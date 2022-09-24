@@ -1,90 +1,74 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT"
-      crossorigin="anonymous"
-    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Link Share</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   </head>
-  <body>
-    <script
-      src="functions.js"></script>
-    <script
-      src="main.js"></script>
-    </script>
-
-    <nav class="navbar navbar-expand-lg bg-green">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">Link Share</a>
-        <button
-          class="navbar-toggler"
-          type="button"
-          data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent"
-          aria-controls="navbarSupportedContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
-        >
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav ml-10 mb-2 mb-lg-0">
-            <li class="nav-item" style="margin-left: 150px">
-              <a class="nav-link active" aria-current="page" href="#"
-                >Share Link</a
-              >
-            </li>
-            <li class="nav-item" style="margin-left: 300px">
-              <a class="nav-link active" aria-current="page" href="#">Chat </a>
-            </li>
-            <li class="nav-item dropdown"></li>
-          </ul>
+  <body style="background-image: linear-gradient(to right, rgb(181, 142, 195) , rgb(40, 81, 0));">
+    <!---->
+    <section class="nav-barc">
+    <nav class="navbar navbar-expand-lg bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand text-primary" href="#">Link Share</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Share Link</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Chat </a>
+              </li>
+              
+          </div>
         </div>
+      </nav>
+    </section>
+    <Section class="eroor">
+      <div class="alert alert-danger alert-dismissible fade" id="alert1"  role="alert">
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+        <button type="button" class="btn-close" onclick="closealert()" aria-label="Close"></button>
       </div>
-    </nav>
-    <br />
-    <br />
-    <br />
-    <br />
-    <div>
-      Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae,
-      quisquam! Ducimus dolore placeat pariatur tempore maxime libero explicabo
-      fugiat delectus quidem ad, excepturi culpa, nemo, non eos beatae dolorem
-      ullam!
-    </div>
-    <br />
-    <br />
+    </Section>
+    <!---->
 
-    <div class="form-floating">
-      <textarea
+    <!---->
+    <div class="container p-2 mt-5 shadow rounded" style="background-image: linear-gradient(to right, rgb(225, 222, 226) , rgb(186, 222, 151));">
+        
+    <textarea
         class="form-control"
         placeholder="Leave a comment here"
         id="foat"
         style="height: 200px"
       >
       Hi how are u</textarea
-      >
-      <label for="foat">Input link</label>
-      <section>
-        <button type="button" onclick="sendlink()">SEND LINK</button>
-        <button type="button" onclick="hide();hide1()">GET LINK</button>
+      ><label for="foat">Input link</label>
+      <div class="form-control mt-3">
+      
+      
+        <button type="button" class="btn btn-primary m-2" onclick="sendlink()">SEND LINK</button>
+        <button type="button" class="btn btn-secondary m-2" onclick="hide();hide1()">GET LINK</button>
         <div>
-          <input type="text" id="text" style="display: none" />
-          <button type="button" id="text1" onclick="getkey();insert()" style="display:none" >
+          <input type="text" class="form-control m-2"  id="text" style="display: none" />
+          <button type="button" class="btn btn-primary m-2" id="text1" onclick="getkey();" style="display:none" >
             Secondary
           </button>
         </div>
-      </section>
+        </div>
+      
+
     </div>
 
-    <br />
-    <br />
-    
+    <!---->
+    <script
+      src="functions.js"></script>
+    <script
+      src="main.js"></script>
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
   </body>
-  
 </html>
