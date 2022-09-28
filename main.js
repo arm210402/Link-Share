@@ -1,6 +1,6 @@
 //import {link,key} from 'function.js'
-
-function insert() {
+var express = require('express');
+var app = express();
   var mysql = require('mysql');
 
   var con = mysql.createConnection({
@@ -10,7 +10,9 @@ function insert() {
     password: "",
     database: "link_share"
   });
-
+app.get('/', function (req, res) {
+  // var getinput=;
+}
   //random string 
   let r = (Math.random() + 1).toString(36).substring(7);
   con.connect(function (err) {
@@ -32,4 +34,5 @@ function insert() {
 
   });
 
-}
+////////  express files not added
+
