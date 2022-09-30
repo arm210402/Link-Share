@@ -1,38 +1,42 @@
-//import {link,key} from 'function.js'
-var express = require('express');
-var app = express();
-  var mysql = require('mysql');
+var express=require('express');
+var app= express();
 
-  var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    port: "3306",
-    password: "",
-    database: "link_share"
-  });
-app.get('/', function (req, res) {
-  // var getinput=;
-}
-  //random string 
-  let r = (Math.random() + 1).toString(36).substring(7);
-  con.connect(function (err) {
-    //random string
+var bodyParser=require('body-parser');
+const con = require('./connection');
 
+app.use(bodyParser.json());
 
-    if (err) throw err;
-    console.log("Connected!");
-  });
-  let sql1 = "Create database link_share";
-  let sql2 = "CREATE TABLE 'datakv' ('key1' VARCHAR(65535) NOT NULL , 'data1' VARCHAR(65535) NOT NULL )";
-  let sql3 = "Insert into datakv(key1, data1  )values ('akss2','askjdhs')";
+app.use(bodyParser.urlencoded({extended:true}));
 
-  con.query(sql3, function (err, result, fields) {
-    if (err) throw err;
-    var names = result;
-    names[Object.keys(names)[0]];
-    console.log(names);
+app.get('/',function(req ,res){
+    res.sendFile(__dirname+'/register.html')
+});
 
-  });
+app.post('/',function(req,res){
+    var name =req.body.name;
+    var email=req.body.email;
+    var mno=req.body.mno;
 
-////////  express files not added
+    con.connect(function(error){
+        if(error) throw error;
 
+        var sql="Insert into students(name, email, mno) values('"+name+"','"+email+"','"+mno+"')";
+        con.query(sql,function(error,result){
+            if(error) throw error;
+            res.send('Student register successfull');
+        });
+    });
+
+});
+app.listen(5500);
+/*var con=require("./connection");
+
+con.connect(function(error){
+    if(error) throw error;
+    con.query("Select * from students",function(error,result){
+        if(error) throw error;
+        console.log("connected")
+        console.log(result);
+    });
+})
+*/
