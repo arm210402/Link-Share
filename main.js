@@ -9,18 +9,17 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
 
 app.get('/',function(req ,res){
-    res.sendFile(__dirname+'/register.html')
+    res.sendFile(__dirname+'/index.html')
 });
 
 app.post('/',function(req,res){
-    var name =req.body.name;
-    var email=req.body.email;
-    var mno=req.body.mno;
+    var key=req.body.key;
+
 
     con.connect(function(error){
         if(error) throw error;
 
-        var sql="Insert into students(name, email, mno) values('"+name+"','"+email+"','"+mno+"')";
+        var sql="SELECT * FROM STUDENTS WHERE name=key";
         con.query(sql,function(error,result){
             if(error) throw error;
             res.send('Student register successfull');
